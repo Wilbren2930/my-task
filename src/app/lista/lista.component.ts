@@ -26,9 +26,12 @@ import { BackendService } from './../backend.service';
   ],
 })
 export class ListaComponent implements OnInit {
-  public task:Array<any> = [] 
+  public task:Array<any> = [];
+
+  currentUser:boolean;
   constructor( private _service: BackendService) { 
     this.task = _service.task;
+    this.currentUser = _service.currentUser;
   }
 
   ngOnInit() {

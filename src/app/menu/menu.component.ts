@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from './../backend.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  constructor() { }
+  currentUser:boolean;
+  constructor(private _service: BackendService) { 
+    this.currentUser = _service.currentUser;
+  }
 
   ngOnInit() {
   }

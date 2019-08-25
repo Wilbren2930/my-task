@@ -8,26 +8,34 @@ import { ModalAddTaskComponent } from './modal-add-task/modal-add-task.component
 import { ListaComponent } from './lista/lista.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //Servicios
 
 import { BackendService } from './backend.service';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ModalAddTaskComponent,
-    ListaComponent
+    ListaComponent,
+    LoginComponent,
+    HomeComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [ BackendService ],
   bootstrap: [AppComponent]

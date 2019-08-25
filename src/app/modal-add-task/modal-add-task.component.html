@@ -1,3 +1,5 @@
+<button [@flyInOut] ngbAutofocus class = "btn btn-light" (click) = "open(content)" >Add Task</button>
+
 <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Add Task</h4>
@@ -6,11 +8,9 @@
       </button>
     </div>
     <div class="modal-body">
-        <input type="text" class="form-control" [formControl]="taskN" placeholder="Description">
+        <input type="text" ngbAutofocus class="form-control" [formControl]="taskN" placeholder="Description">
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-primary" (click)="add()">Save</button>
     </div>
   </ng-template>
-  
-  <button [@flyInOut] class = "btn btn-light" (click) = "open(content)" >Add Task</button>

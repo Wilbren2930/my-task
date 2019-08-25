@@ -1,0 +1,10 @@
+#error{
+    font-family: monospace;
+    font: bold;
+    font-size: 250px;
+}
+#err{
+    font-family: monospace;
+    font: bolder;
+    font-size: 80px;
+}
