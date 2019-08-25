@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Task</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Task Description</label>
+      <input type="text" class="form-control" id="exampleInput1" placeholder="Description">
+    </div>
+  </form>
+  
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary">Save</button>
+    </div>
+  </ng-template>
+  
+  <button [@flyInOut] class = "btn btn-light" (click) = "open(content)" >Add Task</button>
