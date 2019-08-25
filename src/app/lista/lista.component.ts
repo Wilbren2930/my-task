@@ -5,8 +5,8 @@ import {
   style,
   animate,
   transition,
-  // ...
 } from '@angular/animations';
+import { BackendService } from './../backend.service';
 
 @Component({
   selector: 'app-lista',
@@ -26,16 +26,9 @@ import {
   ],
 })
 export class ListaComponent implements OnInit {
-  public task:Array<any> = [
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.",
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.",
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.",
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.",
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.",
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.",
-    "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño."
-  ] 
-  constructor() { 
+  public task:Array<any> = [] 
+  constructor( private _service: BackendService) { 
+    this.task = _service.task;
   }
 
   ngOnInit() {

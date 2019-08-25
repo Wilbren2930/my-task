@@ -6,8 +6,9 @@ import {
   style,
   animate,
   transition,
-  // ...
 } from '@angular/animations';
+import { BackendService } from './../backend.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-add-task',
@@ -29,9 +30,17 @@ import {
 export class ModalAddTaskComponent implements OnInit {
 
   closeResult: string;
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private _service: BackendService) { }
 
   ngOnInit() {
+  }
+
+  taskN = new FormControl('');
+
+  add(){
+    this._service.task.push(this.taskN.value);
+    this.taskN.setValue(''); 
+    this.modalService.dismissAll();
   }
 
   open(content) {

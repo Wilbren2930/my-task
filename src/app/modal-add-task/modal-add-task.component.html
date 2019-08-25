@@ -6,16 +6,10 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Task Description</label>
-      <input type="text" class="form-control" id="exampleInput1" placeholder="Description">
-    </div>
-  </form>
-  
+        <input type="text" class="form-control" [formControl]="taskN" placeholder="Description">
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-primary" (click)="add()">Save</button>
     </div>
   </ng-template>
   
