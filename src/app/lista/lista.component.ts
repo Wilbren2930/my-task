@@ -26,21 +26,18 @@ import { BackendService } from './../backend.service';
   ],
 })
 export class ListaComponent implements OnInit {
-  public task:Array<any> = [];
+  
+  public task = [];
 
   currentUser:boolean;
   constructor( private _service: BackendService) { 
-    this.task = _service.task;
     this.currentUser = _service.currentUser;
   }
 
   ngOnInit() {
-  }
-
-  isOpen = true;
-
-  toggle() {
-    this.isOpen = !this.isOpen;
+    this._service.getAllTask().subscribe(task => {
+      this.task = task;
+    })
   }
 
 }

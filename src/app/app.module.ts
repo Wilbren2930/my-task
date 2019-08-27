@@ -8,8 +8,13 @@ import { ModalAddTaskComponent } from './modal-add-task/modal-add-task.component
 import { ListaComponent } from './lista/lista.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+import { environment } from '../environments/environment.prod'; 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //Servicios
@@ -35,9 +40,12 @@ import { Error404Component } from './error404/error404.component';
     NgbModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
+
   ],
-  providers: [ BackendService ],
+  providers: [AngularFireAuth, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

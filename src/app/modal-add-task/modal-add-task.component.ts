@@ -38,7 +38,7 @@ export class ModalAddTaskComponent implements OnInit {
   taskN = new FormControl('');
 
   add(){
-    this._service.task.push(this.taskN.value);
+    this._service.saveTask(this.taskN.value);
     this.taskN.setValue(''); 
     this.modalService.dismissAll();
   }
