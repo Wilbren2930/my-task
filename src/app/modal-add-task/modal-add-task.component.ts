@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons , NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import {
   trigger,
   state,

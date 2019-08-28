@@ -8,8 +8,8 @@ import { BackendService } from './../backend.service';
 })
 export class MenuComponent implements OnInit {
   currentUser:boolean;
-  constructor(private _service: BackendService) { 
-    this.currentUser = _service.currentUser;
+  constructor( _service: BackendService) { 
+   this.currentUser = _service.currentUser;
   }
 
   ngOnInit() {

@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
   verificar(): void{
     this._service.onLoginEmail(this.email.value, this.password.value).then((res)=>{
       this._service.currentUser = true;
-      this.router.navigate(['/home']);
+      this.router.navigate(['home']);
     }).catch(err => console.log('Error ', alert(err.message)));
   }
   verificar2(): void{
     this._service.onRegister(this.email.value, this.password.value).then((res)=>{
-      this.router.navigate(['/login']);
+      this.router.navigate(['login']);
      alert("Introduzca sus credenciales.");
     }).catch(err => console.log('Error ', alert(err.message)));
   }

@@ -40,4 +40,8 @@ export class ListaComponent implements OnInit {
     })
   }
 
+  deleteTask(id:string){
+    this._service.deleteOneTask(id);
+  }
+
 }
