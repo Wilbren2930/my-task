@@ -1,6 +1,6 @@
 export interface TaskInterface {
     taskDescription?: string;
-    fecha?:string;
+    fecha?:Date;
     id?: string;
     userUid?: string;
   }

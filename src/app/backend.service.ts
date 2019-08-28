@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TaskInterface } from './models/task';
 import { take, map, tap } from 'rxjs/operators';
+import { formatDate, getLocaleDateTimeFormat } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -42,15 +43,17 @@ export class BackendService {
   } 
   saveTask(taskDescription:string): void{
     this.collection = this.afss.collection<TaskInterface>(this.id);
+    const mydate = new Date();
     const obj: TaskInterface =
       {
         taskDescription: taskDescription,
-        fecha: Date.now.toString(),
+        fecha: mydate,
         userUid: this.id,
       }
   
     this.collection.add(obj);
   }
+
   getAllTask(){
     this.id = this.afAuth.auth.currentUser.uid.toString();
     this.collection = this.afss.collection<TaskInterface>(this.id);
