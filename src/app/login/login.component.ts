@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['home']);
     }).catch(err => console.log('Error ', alert(err.message)));
   }
+  
+  
   verificar2(): void{
     this._service.onRegister(this.email.value, this.password.value).then((res)=>{
       this.router.navigate(['login']);
