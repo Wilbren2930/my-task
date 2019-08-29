@@ -43,7 +43,7 @@ export class BackendService {
   } 
   saveTask(taskDescription:string): void{
     this.collection = this.afss.collection<TaskInterface>(this.id);
-    const mydate = new Date();
+    const mydate = new Date().toTimeString();
     const obj: TaskInterface =
       {
         taskDescription: taskDescription,
@@ -56,7 +56,7 @@ export class BackendService {
 
   getAllTask(){
     this.id = this.afAuth.auth.currentUser.uid.toString();
-    this.collection = this.afss.collection<TaskInterface>(this.id);
+    this.collection = this.afss.collection<TaskInterface>(this.id, ref => ref.orderBy('fecha'));
     return this.coll = this.collection.snapshotChanges()
     .pipe(map( changes => {
       return changes.map( action =>{
